@@ -66,7 +66,7 @@ button:focus-visible {
 
 .globos {
   position: absolute;
-      z-index: 9999; /* Valor alto para asegurar que esté al frente */
+      z-index: 9997; /* Valor alto para asegurar que esté al frente */
       /* Ajusta las coordenadas según tus necesidades */
       top: 0px;
       left: 0px;
@@ -78,7 +78,12 @@ button:focus-visible {
 }
 
 .princesa {
-
   width: 100%;
   display: block; /* Asegura que la imagen se muestre como un bloque */
+}
+
+@font-face {
+  font-family: 'MiFuente'; /* Nombre de la fuente */
+  src: url('./assets/fonts/LucySaidOk.ttf') format('truetype'); /* Ruta al archivo TTF */
+  /* Puedes incluir otros atributos como font-weight y font-style si es necesario */
 }
