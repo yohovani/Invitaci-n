@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import globos from './assets/globos.png';
 import princesa from './assets/princesa.png';
+import construccion from './assets/construccion.png';
 import cancion from './assets/audio/Te_Esperaba.mp3';
 import Button from 'react-bootstrap/Button';
 
@@ -42,7 +43,9 @@ function App() {
       <Container className="margen">
         <img src={princesa} className="princesa" /><br />
         <h2 style={{ fontFamily: 'MiFuente' }}>La dulce espera está por terminar</h2><br />
-        <Button onClick={togglePlay}>{isPlaying ? 'Pausar' : 'Reproducir'}</Button>
+        <Button onClick={togglePlay}>{isPlaying ? 'Pausar' : 'Reproducir'}</Button>< br />< br />
+        <img src={construccion} className="princesa" /><br />
+        <p>Mi Papi esta trabajando en lo que falta aguanten</p>
       </Container>
     </>
   );
