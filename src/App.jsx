@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react';
 
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -8,10 +8,21 @@ import princesa from './assets/princesa.png'
 import cancion from './assets/audio/Te_Esperaba.mp3'
 import Button from 'react-bootstrap/Button';
 
-function App() {
-  const [isPlaying, setIsPlaying] = useState(true); // Estado para controlar la reproducción del audio
+function App() {  
+  const audioRef = useRef(null); // Referencia al elemento audio
+  const [isPlaying, setIsPlaying] = useState(true); // Estado para controlar la reproducción
+
+  useEffect(() => {
+    // Verificar si el audio debe estar reproduciéndose al principio
+    if (isPlaying) {
+      audioRef.current.play();
+    } else {
+      audioRef.current.pause();
+    }
+  }, [isPlaying]); // Ejecutar cuando isPlaying cambia
+
   const togglePlay = () => {
-    setIsPlaying(!isPlaying); // Cambia el estado de reproducción al hacer clic en el botón de reproducción/pausa
+    setIsPlaying(!isPlaying); // Cambiar el estado de reproducción
   };
 
   return (
@@ -22,10 +33,10 @@ function App() {
         <img src={princesa} className='princesa'/><br/>
         <h2 style={{ fontFamily: 'MiFuente' }}>La dulce espera esta por terminar</h2><br/>
 
-        <div>
-          <audio src={cancion} autoPlay={isPlaying}/> {/* Utiliza el atributo autoPlay para iniciar la reproducción automáticamente si isPlaying es true */}
-          <Button  onClick={togglePlay}>{isPlaying ? 'Pausar' : 'Reproducir'}</Button> {/* Botón para pausar/reproducir */}
-        </div>
+      <audio ref={audioRef} src={cancion} />
+
+      {/* Botón para reproducir/pausar */}
+      <Button onClick={togglePlay}>{isPlaying ? 'Pausar' : 'Reproducir'}</Button>
     </Container>
     </>
   )
