@@ -47,13 +47,12 @@ function App() {
 
   return (
     <>
-      <br />
       <img src={globos} className="globos img-fluid" />
       <Container fluid className="margen">
         <img src={princesa} className="princesa" /><br />
         <h2 style={{ fontFamily: 'MiFuente' }}>La dulce espera está por terminar</h2><br />
         
-        <Button onClick={togglePlay}>{isPlaying ? 'Pausar' : 'Reproducir'}</Button>< br />< br />
+        <Boton onClick={togglePlay} texto={"Pausar la canción que eligieron para mi" }>{isPlaying ? 'Pausar la canción que eligieron para mi' : 'Reproducir la canción que eligieron para mi'}</Boton>< br />< br />
 
         <Boton onClick={() => setModalShow(true)} texto={"Mensaje de mi Mami y mi Papi" }></Boton>
 
@@ -63,12 +62,12 @@ function App() {
         titulo={"Mensaje de mis Papis"} 
         contenido={"Queridos amigos y familiares, Estamos rebosantes de alegría al anunciar la llegada inminente de nuestra pequeña princesa. Cada latido de su corazón nos llena de amor y anticipación, y no podemos esperar a conocerla y abrazarla. Esta dulce niña ya ha traído tanta luz a nuestras vidas, y estamos emocionados de celebrar su próximo arribo con todos ustedes en un Baby Shower lleno de amor y expectativas. ¡Su llegada es un regalo que estamos ansiosos por compartir con el mundo! Con cariño, Palina & Yohovani"}
 
-      /><br/><br/><br/><br/>
+      />
 
         <img src={pikachu} className="princesa" /><br />
         <img src={construccion} className="princesa" /><br />
-        <p>Mi Papi esta trabajando en lo que falta aguanten</p>
-      </Container><br></br>
+        <p>Mi Papi esta trabajando en lo que falta aguanten</p><br></br>
+      </Container>
     </>
   );
 }

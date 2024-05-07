@@ -12,7 +12,6 @@ body {
   display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
   background-color: #ffcdd4;
 }
 
@@ -60,7 +59,6 @@ button:focus-visible {
   padding-right: 45px;
   padding-top: 100px;
   background-color: #ffffff;
-  height: 100vh;
   position: relative;
 }
 
@@ -99,10 +97,10 @@ button:focus-visible {
 button{
   width:200px;
   height:70px;
-  background: linear-gradient(to left top, #c32c71 50%, #b33771 50%);
+  background: linear-gradient(to left top, #e57d90 50%, #f99aaa 50%);
   border-style: none;
   color:#fff;
-  font-size: 15px;
+  font-size: 12px;
   letter-spacing: 3px;
   font-family: 'Lato';
   font-weight: 600;

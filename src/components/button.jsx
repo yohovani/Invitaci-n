@@ -1,7 +1,7 @@
 function Boton({...props}) {
 
     return (
-        <div className="wrapper">
+        <div>
           <button onClick={props.onClick} >{props.texto} 
             <span></span>
             <span></span>
