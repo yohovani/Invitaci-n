@@ -6,7 +6,6 @@ import globos from './assets/images/globos.png';
 import princesa from './assets/images/princesa.png';
 import construccion from './assets/construccion.png';
 import cancion from './assets/audio/Te_Esperaba.mp3';
-import Button from 'react-bootstrap/Button';
 import pikachu from './assets/images/pikachu.png'
 import Boton from './components/button'
 import MyVerticallyCenteredModal from './components/modal'
@@ -16,6 +15,7 @@ function App() {
   const [audio] = useState(new Audio(cancion)); // Crear instancia de Audio
   const [isPlaying, setIsPlaying] = useState(false); // Estado para controlar la reproducción
   const [modalShow, setModalShow] = React.useState(false);
+  const [modalMsjBebe, setModalMsjBebe] = React.useState(false);
 
   // Función para controlar la reproducción del audio
   const togglePlay = () => {
@@ -52,21 +52,32 @@ function App() {
         <img src={princesa} className="princesa" /><br />
         <h2 style={{ fontFamily: 'MiFuente' }}>La dulce espera está por terminar</h2><br />
         
-        <Boton onClick={togglePlay} texto={"Pausar la canción que eligieron para mi" }>{isPlaying ? 'Pausar la canción que eligieron para mi' : 'Reproducir la canción que eligieron para mi'}</Boton>< br />< br />
+        <a className="play-btn"  onClick={togglePlay} ></a>< br />
+        <p style={{ fontFamily: 'MiFuente' }}>{isPlaying ? 'Pausar la canción que eligieron para mi' : 'Reproducir la canción que eligieron para mi' }</p>
+        
+        <Boton onClick={() => setModalShow(true)} texto={"Mensaje de mi Mami y mi Papi" }></Boton>< br />
+        <img src={pikachu} className="princesa" /><br />
 
-        <Boton onClick={() => setModalShow(true)} texto={"Mensaje de mi Mami y mi Papi" }></Boton>
+        <Boton onClick={() => setModalMsjBebe(true)} texto={"Mensaje de mi Para ti" }></Boton>
+      
+        <img src={construccion} className="princesa" /><br />
+        <p>Mi Papi esta trabajando en lo que falta aguanten</p><br></br>
 
-      <MyVerticallyCenteredModal
+        <MyVerticallyCenteredModal
         show={modalShow}
         onHide={() => setModalShow(false)}
         titulo={"Mensaje de mis Papis"} 
-        contenido={"Queridos amigos y familiares, Estamos rebosantes de alegría al anunciar la llegada inminente de nuestra pequeña princesa. Cada latido de su corazón nos llena de amor y anticipación, y no podemos esperar a conocerla y abrazarla. Esta dulce niña ya ha traído tanta luz a nuestras vidas, y estamos emocionados de celebrar su próximo arribo con todos ustedes en un Baby Shower lleno de amor y expectativas. ¡Su llegada es un regalo que estamos ansiosos por compartir con el mundo! Con cariño, Palina & Yohovani"}
-
+        contenido={""}
+        flag = {false}
       />
 
-        <img src={pikachu} className="princesa" /><br />
-        <img src={construccion} className="princesa" /><br />
-        <p>Mi Papi esta trabajando en lo que falta aguanten</p><br></br>
+      <MyVerticallyCenteredModal
+        show={modalMsjBebe}
+        onHide={() => setModalMsjBebe(false)}
+        titulo={"Mensaje de mi Para ti"} 
+        contenido={"Aqui va un video que mi tia Perla va a hacer no la presionen por que luego le da amsiedad, dejen que tenga mas fotos mias para que lo haga"}
+        flag = {true}
+      />
       </Container>
     </>
   );
