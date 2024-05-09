@@ -17,8 +17,9 @@ function MyVerticallyCenteredModal(props) {
         </Modal.Header>
         <Modal.Body style={{ textAlign: 'center' }}>
                     
-            {props.flag ? props.contenido :   <p>Queridos amigos y familiares, Estamos rebosantes de alegría al anunciar la llegada inminente de nuestra pequeña princesa.<br/>Cada latido de su corazón nos llena de amor y anticipación, y no podemos esperar a conocerla y abrazarla.<br/>Esta dulce niña ya ha traído tanta luz a nuestras vidas, y estamos emocionados de celebrar su próximo arribo con todos ustedes en un Baby Shower lleno de amor y expectativas.<br/>¡Su llegada es un regalo que estamos ansiosos por compartir con el mundo!</p>}
-            {props.flag ? <img src={construccion} className="princesa" /> :   <h2 style={{ fontFamily: 'MiFuente' }}> Con cariño, Palina & Yohovani</h2>}
+            {props.bandera ? props.contenido :   <p>Queridos amigos y familiares, Estamos rebosantes de alegría al anunciar la llegada inminente de nuestra pequeña princesa.<br/>Cada latido de su corazón nos llena de amor y anticipación, y no podemos esperar a conocerla y abrazarla.<br/>Esta dulce niña ya ha traído tanta luz a nuestras vidas, y estamos emocionados de celebrar su próximo arribo con todos ustedes en un Baby Shower lleno de amor y expectativas.<br/>¡Su llegada es un regalo que estamos ansiosos por compartir con el mundo!</p>}
+            {props.bandera ? "" :   <h2 style={{ fontFamily: 'MiFuente' }}> Con cariño, Palina & Yohovani</h2>}
+
         </Modal.Body>
         <Modal.Footer>
           <Boton onClick={props.onHide} texto={"Cerrar"}></Boton>

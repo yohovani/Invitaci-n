@@ -9,14 +9,16 @@ import cancion from './assets/audio/Te_Esperaba.mp3';
 import pikachu from './assets/images/pikachu.png'
 import Boton from './components/button'
 import MyVerticallyCenteredModal from './components/modal'
-import Modal from 'react-bootstrap/Modal';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 function App() {
   const [audio] = useState(new Audio(cancion)); // Crear instancia de Audio
   const [isPlaying, setIsPlaying] = useState(false); // Estado para controlar la reproducción
   const [modalShow, setModalShow] = React.useState(false);
   const [modalMsjBebe, setModalMsjBebe] = React.useState(false);
-
+  const [modalConfirmar, setmodalConfirmar] = React.useState(false);
+  
   // Función para controlar la reproducción del audio
   const togglePlay = () => {
     if (isPlaying) {
@@ -54,12 +56,15 @@ function App() {
         
         <a className="play-btn"  onClick={togglePlay} ></a>< br />
         <p style={{ fontFamily: 'MiFuente' }}>{isPlaying ? 'Pausar la canción que eligieron para mi' : 'Reproducir la canción que eligieron para mi' }</p>
+        <Row>
+          <Col><Boton onClick={() => setModalShow(true)} texto={"Mensaje de mi Mami y mi Papi" }></Boton></Col>
+          <Col><Boton onClick={() => setModalMsjBebe(true)} texto={"Mensaje de mi Para ti" }></Boton></Col>
+        </Row>
         
-        <Boton onClick={() => setModalShow(true)} texto={"Mensaje de mi Mami y mi Papi" }></Boton>< br />
         <img src={pikachu} className="princesa" /><br />
 
-        <Boton onClick={() => setModalMsjBebe(true)} texto={"Mensaje de mi Para ti" }></Boton>
-      
+        <Boton onClick={() => setmodalConfirmar(true)} texto={"Confirmar Asistencia" }></Boton>< br />
+        
         <img src={construccion} className="princesa" /><br />
         <p>Mi Papi esta trabajando en lo que falta aguanten</p><br></br>
 
@@ -68,7 +73,7 @@ function App() {
         onHide={() => setModalShow(false)}
         titulo={"Mensaje de mis Papis"} 
         contenido={""}
-        flag = {false}
+        bandera = "false"
       />
 
       <MyVerticallyCenteredModal
@@ -76,8 +81,18 @@ function App() {
         onHide={() => setModalMsjBebe(false)}
         titulo={"Mensaje de mi Para ti"} 
         contenido={"Aqui va un video que mi tia Perla va a hacer no la presionen por que luego le da amsiedad, dejen que tenga mas fotos mias para que lo haga"}
-        flag = {true}
+        bandera = "true"
       />
+
+<MyVerticallyCenteredModal
+        show={modalConfirmar}
+        onHide={() => setmodalConfirmar(false)}
+        titulo={"Confirmar Asistencia"} 
+        contenido={<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScus3LeFk9kKYKwLyDU63TPC8QV0J1zshaTWTcxi83665sC9Q/viewform?embedded=true" width="500" height="661">Cargando…</iframe>}
+        bandera = "true"
+      />
+
+
       </Container>
     </>
   );
