@@ -86,16 +86,9 @@ button:focus-visible {
   /* Puedes incluir otros atributos como font-weight y font-style si es necesario */
 }
 
-.wrapper{
-  position: absolute;
-  top:50%;
-  left:50%;
-  transform: translate(-50%, -50%);
-  width: fit-content;
-  height:auto;
-}
+
 button{
-  width:200px;
+  width:100px;
   height:70px;
   background: linear-gradient(to left top, #e57d90 50%, #f99aaa 50%);
   border-style: none;

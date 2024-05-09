@@ -11,13 +11,14 @@ import Boton from './components/button'
 import MyVerticallyCenteredModal from './components/modal'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
+import cheems from './assets/cheems.jpg'
 function App() {
   const [audio] = useState(new Audio(cancion)); // Crear instancia de Audio
   const [isPlaying, setIsPlaying] = useState(false); // Estado para controlar la reproducción
   const [modalShow, setModalShow] = React.useState(false);
   const [modalMsjBebe, setModalMsjBebe] = React.useState(false);
   const [modalConfirmar, setmodalConfirmar] = React.useState(false);
+  const [modalMapa, setModalMapa] = React.useState(false);
   
   // Función para controlar la reproducción del audio
   const togglePlay = () => {
@@ -56,15 +57,18 @@ function App() {
         
         <a className="play-btn"  onClick={togglePlay} ></a>< br />
         <p style={{ fontFamily: 'MiFuente' }}>{isPlaying ? 'Pausar la canción que eligieron para mi' : 'Reproducir la canción que eligieron para mi' }</p>
-        <Row>
-          <Col><Boton onClick={() => setModalShow(true)} texto={"Mensaje de mi Mami y mi Papi" }></Boton></Col>
-          <Col><Boton onClick={() => setModalMsjBebe(true)} texto={"Mensaje de mi Para ti" }></Boton></Col>
-        </Row>
+        <Container>
+          <Row className="justify-content-md-center">
+            <Col xs={6} md={6}><Boton onClick={() => setModalShow(true)} texto={"Mensaje de mi Mami y mi Papi" }></Boton></Col><br />
+            <Col xs={6} md={6}><Boton onClick={() => setModalMsjBebe(true)} texto={"Mensaje de mi Para ti" }></Boton></Col>
+          </Row>
+        </Container>
         
         <img src={pikachu} className="princesa" /><br />
 
         <Boton onClick={() => setmodalConfirmar(true)} texto={"Confirmar Asistencia" }></Boton>< br />
-        
+        <Boton onClick={() => setModalMapa(true)} texto={"Lugar del Evento" }></Boton>< br />
+
         <img src={construccion} className="princesa" /><br />
         <p>Mi Papi esta trabajando en lo que falta aguanten</p><br></br>
 
@@ -80,19 +84,25 @@ function App() {
         show={modalMsjBebe}
         onHide={() => setModalMsjBebe(false)}
         titulo={"Mensaje de mi Para ti"} 
-        contenido={"Aqui va un video que mi tia Perla va a hacer no la presionen por que luego le da amsiedad, dejen que tenga mas fotos mias para que lo haga"}
+        contenido={<Container><p>Aqui va un video que mi tia Perla va a hacer no la presionen por que luego le da amsiedad, dejen que tenga mas fotos mias para que lo haga</p><img src={cheems} className="princesa" /><br /></Container>}
         bandera = "true"
       />
 
-<MyVerticallyCenteredModal
+      <MyVerticallyCenteredModal
         show={modalConfirmar}
         onHide={() => setmodalConfirmar(false)}
         titulo={"Confirmar Asistencia"} 
-        contenido={<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScus3LeFk9kKYKwLyDU63TPC8QV0J1zshaTWTcxi83665sC9Q/viewform?embedded=true" width="500" height="661">Cargando…</iframe>}
+        contenido={<Container><iframe src="https://docs.google.com/forms/d/e/1FAIpQLScus3LeFk9kKYKwLyDU63TPC8QV0J1zshaTWTcxi83665sC9Q/viewform?embedded=true"  height="661">Cargando…</iframe></Container>}
         bandera = "true"
       />
 
-
+    <MyVerticallyCenteredModal
+        show={modalMapa}
+        onHide={() => setModalMapa(false)}
+        titulo={"Lugar de la fiesta"} 
+        contenido={<Container><p>Es aqui para que no te pierdas</p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14709.808254076923!2d-102.41750395850741!3d22.82275861764541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x868234615fb0afff%3A0x3fc11608cc36dace!2s98630%20Tacoaleche%2C%20Zac.!5e0!3m2!1ses-419!2smx!4v1715271417770!5m2!1ses-419!2smx"  height="300"  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></Container>}
+        bandera = "true"
+      />
       </Container>
     </>
   );
