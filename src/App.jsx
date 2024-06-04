@@ -8,10 +8,14 @@ import construccion from './assets/construccion.png';
 import cancion from './assets/audio/Te_Esperaba.mp3';
 import pikachu from './assets/images/pikachu.png'
 import Boton from './components/button'
+import Whatsapp from './components/whatsapp';
 import MyVerticallyCenteredModal from './components/modal'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import cheems from './assets/cheems.jpg'
+import Button from 'react-bootstrap/Button';
+
+
 function App() {
   const [audio] = useState(new Audio(cancion)); // Crear instancia de Audio
   const [isPlaying, setIsPlaying] = useState(false); // Estado para controlar la reproducción
@@ -68,9 +72,8 @@ function App() {
 
         <Boton onClick={() => setmodalConfirmar(true)} texto={"Confirmar Asistencia" }></Boton>< br />
         <Boton onClick={() => setModalMapa(true)} texto={"Lugar del Evento" }></Boton>< br />
-
-        <img src={construccion} className="princesa" /><br />
-        <p>Mi Papi esta trabajando en lo que falta aguanten</p><br></br>
+        <br/>
+        <Whatsapp /><br /><br /><br />
 
         <MyVerticallyCenteredModal
         show={modalShow}
