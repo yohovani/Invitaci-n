@@ -6,7 +6,7 @@ import globos from './assets/images/globos.png';
 import princesa from './assets/images/princesa.png';
 import construccion from './assets/construccion.png';
 import cancion from './assets/audio/Te_Esperaba.mp3';
-import pikachu from './assets/images/pikachu.png'
+import pikachu from './assets/images/pikachu_name.png'
 import Boton from './components/button'
 import Whatsapp from './components/whatsapp';
 import MyVerticallyCenteredModal from './components/modal'
