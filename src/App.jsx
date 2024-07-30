@@ -103,7 +103,7 @@ function App() {
         show={modalMapa}
         onHide={() => setModalMapa(false)}
         titulo={"Lugar de la fiesta"} 
-        contenido={<Container><p>Es aqui para que no te pierdas</p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14709.808254076923!2d-102.41750395850741!3d22.82275861764541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x868234615fb0afff%3A0x3fc11608cc36dace!2s98630%20Tacoaleche%2C%20Zac.!5e0!3m2!1ses-419!2smx!4v1715271417770!5m2!1ses-419!2smx"  height="300"  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></Container>}
+        contenido={<Container><p>Es aqui para que no te pierdas</p><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d747.111319075421!2d-102.40447430529728!3d22.826612349749688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses-419!2smx!4v1722380283253!5m2!1ses-419!2smx" height="300"  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></Container>}
         bandera = "true"
       />
       </Container>
