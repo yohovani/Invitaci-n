@@ -14,6 +14,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import cheems from './assets/cheems.jpg'
 import Button from 'react-bootstrap/Button';
+import Cuenta from './components/cuenta'
 
 
 function App() {
@@ -23,7 +24,8 @@ function App() {
   const [modalMsjBebe, setModalMsjBebe] = React.useState(false);
   const [modalConfirmar, setmodalConfirmar] = React.useState(false);
   const [modalMapa, setModalMapa] = React.useState(false);
-  
+  const [modalFecha, setmodalFecha] = React.useState(false);
+
   // Función para controlar la reproducción del audio
   const togglePlay = () => {
     if (isPlaying) {
@@ -58,7 +60,7 @@ function App() {
       <Container fluid className="margen">
         <img src={princesa} className="princesa" /><br />
         <h2 style={{ fontFamily: 'MiFuente' }}>La dulce espera está por terminar</h2><br />
-        
+      
         <a className="play-btn"  onClick={togglePlay} ></a>< br />
         <p style={{ fontFamily: 'MiFuente' }}>{isPlaying ? 'Pausar la canción que eligieron para mi' : 'Reproducir la canción que eligieron para mi' }</p>
         <Container>
@@ -70,8 +72,8 @@ function App() {
         
         <img src={pikachu} className="princesa" /><br />
 
-        <Boton onClick={() => setmodalConfirmar(true)} texto={"Confirmar Asistencia" }></Boton>< br />
         <Boton onClick={() => setModalMapa(true)} texto={"Lugar del Evento" }></Boton>< br />
+        <Boton onClick={() => setmodalFecha(true)} texto={"Fecha del Evento" }></Boton>< br />
         <br/>
         <Whatsapp /><br /><br /><br />
 
@@ -103,7 +105,18 @@ function App() {
         show={modalMapa}
         onHide={() => setModalMapa(false)}
         titulo={"Lugar de la fiesta"} 
-        contenido={<Container><p>Es aqui para que no te pierdas</p><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d747.111319075421!2d-102.40447430529728!3d22.826612349749688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses-419!2smx!4v1722380283253!5m2!1ses-419!2smx" height="300"  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></Container>}
+        contenido={<Container><p>Es aqui, en la casa de mis papis, para que no te pierdas</p><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d747.111319075421!2d-102.40447430529728!3d22.826612349749688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses-419!2smx!4v1722380283253!5m2!1ses-419!2smx" height="300"  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></Container>}
+        bandera = "true"
+      />
+
+    <MyVerticallyCenteredModal
+        show={modalFecha}
+        onHide={() => setmodalFecha(false)}
+        titulo={"Fecha del Baby Shower"} 
+        contenido={<Container><br /><h2 style={{ fontFamily: 'MiFuente2' }}><b>25 de Agosto de 2024</b></h2>
+        <Cuenta /> <br />
+        <Boton onClick={() => setmodalConfirmar(true)} texto={"Confirmar Asistencia" }></Boton>< br />
+        </Container>}
         bandera = "true"
       />
       </Container>
