@@ -598,3 +598,9 @@ li span {
 /* ******* */
 
 /* Fin cuenta atras*/
+
+.react-player{
+  position: relative;
+  top: 0;
+  left: 0;
+}
