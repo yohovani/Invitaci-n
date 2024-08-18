@@ -13,9 +13,9 @@ import MyVerticallyCenteredModal from './components/modal'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import cheems from './assets/cheems.jpg'
-import Button from 'react-bootstrap/Button';
+import video from './assets/video/invitacion.mp4'
 import Cuenta from './components/cuenta'
-
+import ReactPlayer from 'react-player';
 
 function App() {
   const [audio] = useState(new Audio(cancion)); // Crear instancia de Audio
@@ -89,7 +89,9 @@ function App() {
         show={modalMsjBebe}
         onHide={() => setModalMsjBebe(false)}
         titulo={"Mensaje de mi Para ti"} 
-        contenido={<Container><p>Aqui va un video que mi tia Perla va a hacer no la presionen por que luego le da amsiedad, dejen que tenga mas fotos mias para que lo haga</p><img src={cheems} className="princesa" /><br /></Container>}
+        contenido={<Container>
+          <ReactPlayer url={video} controls className="react-player" width='100%' height='100%'></ReactPlayer>
+          </Container>}
         bandera = "true"
       />
 
