@@ -7,7 +7,7 @@ function Cuenta() {
       hour = minute * 60,
       day = hour * 24;
 
-    let countDown = new Date('Aug 25, 2024 17:30:00').getTime(),
+    let countDown = new Date('Aug 25, 2024 17:0000').getTime(),
     x = setInterval(function() {
 
         let now = new Date().getTime(), distance = countDown - now;
@@ -22,7 +22,7 @@ function Cuenta() {
     return (
         
             <div className="contenido">
-                <h2 style={{ fontFamily: 'MiFuente2' }}>5:30 PM</h2>                
+                <h2 style={{ fontFamily: 'MiFuente2' }}>5:00 PM</h2>                
                 <div className="contador">
 
                 <div className="contenedor">
